@@ -44,10 +44,10 @@ public class PetClass{
         }
     }
     public void statusBar(){
-        System.out.println("Pet name: " + name)
-        System.out.println("Pet hunger: " + hunger )
-        System.out.println("Pet energy: " + energy)
-        System.out.println("Pet happiness: " + happiness )
+        System.out.println("Pet name: " + name);
+        System.out.println("Pet hunger: " + hunger );
+        System.out.println("Pet energy: " + energy);
+        System.out.println("Pet happiness: " + happiness );
     }
     public void makeEverythingIsPositive(){
         if (happiness<0){
@@ -63,6 +63,6 @@ public class PetClass{
     public void passTime(){
         hunger += 5;
         energy -= 2;
-        happines -=5;
+        happiness -=5;
     }
 }
