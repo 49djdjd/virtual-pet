@@ -1,4 +1,6 @@
 //first time using this so referenced ai on what to import
+import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -11,6 +13,7 @@ import javax.swing.JFrame;
 import javax.swing.JButton;
 //displays text/image
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
 import javax.swing.SwingUtilities;
 
@@ -21,18 +24,18 @@ public class PetGUI{
     private JLabel happinessStatus;
     private JLabel energyStatus;
     public PetGUI(){
-
-        //creating new object
-        PetClass pet = new PetClass("silly", 100,100,100);
+        nameStatus = new JLabel("Name: ");
+        String name1 = JOptionPane.showInputDialog("Enter your pet's name: ");
+        //creating new object for testing
+        PetClass pet = new PetClass(name1);
         JFrame frame = new JFrame("My Virtual Pet");
-        frame.setLayout(new FlowLayout());
+        frame.setLayout(new BorderLayout());
         frame.setSize(1500,1000);
         //creaing image icon
         ImageIcon petImage = new ImageIcon("pet.png");
         //holding image
         JLabel petLabel = new JLabel(petImage);
-        frame.setLayout(new FlowLayout());
-        frame.add(petLabel);
+        frame.add(petLabel, BorderLayout.WEST);
         JPanel status = new JPanel();
         frame.add(status);
         status.setLayout(new GridLayout(4,2));
@@ -50,7 +53,9 @@ public class PetGUI{
         happinessStatus.setText("Happiness " + pet.getHappiness());
         status.add(new JLabel("Pet Status "));
         JButton feedButton = new JButton("Feed Pet:");
+        feedButton.setPreferredSize(new Dimension(100, 30));
         JButton playButton = new JButton("Play with Pet");
+        playButton.setPreferredSize(new Dimension(100,30));
         //this adds them to window
         frame.add(feedButton);
         frame.add(playButton);

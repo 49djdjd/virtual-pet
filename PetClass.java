@@ -4,11 +4,11 @@ public class PetClass{
     private int energy;
     private int happiness;
     private boolean alive;
-    public PetClass(String a, int b, int c, int d){
+    public PetClass(String a){
         name = a;
-        hunger = b;
-        energy = c;
-        happiness = d;
+        hunger = 100;
+        energy = 100;
+        happiness = 100;
         alive = true;
 
     }
