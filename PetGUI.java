@@ -1,5 +1,6 @@
 //first time using this so referenced ai on what to import
 import java.awt.FlowLayout;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 //groups things togetehr
@@ -34,16 +35,19 @@ public class PetGUI{
         frame.add(petLabel);
         JPanel status = new JPanel();
         frame.add(status);
+        status.setLayout(new GridLayout(4,2));
         nameStatus = new JLabel();
         hungerStatus = new JLabel();
         energyStatus = new JLabel();
         happinessStatus = new JLabel();
         status.add(nameStatus);
-        nameStatus.setText(null);
+        nameStatus.setText("Name: " + pet.getName());
         status.add(hungerStatus);
         hungerStatus.setText("Hunger: " + pet.getHunger());
         status.add(energyStatus);
+        energyStatus.setText("Energy: " + pet.getEnergy());
         status.add(happinessStatus);
+        happinessStatus.setText("Happiness " + pet.getHappiness());
         status.add(new JLabel("Pet Status "));
         JButton feedButton = new JButton("Feed Pet:");
         JButton playButton = new JButton("Play with Pet");
