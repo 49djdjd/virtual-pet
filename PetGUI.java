@@ -29,16 +29,16 @@ public class PetGUI{
         //creating new object for testing
         PetClass pet = new PetClass(name1);
         JFrame frame = new JFrame("My Virtual Pet");
-        frame.setLayout(new BorderLayout());
+        frame.setLayout(null);
         frame.setSize(1500,1000);
         //creaing image icon
         ImageIcon petImage = new ImageIcon("pet.png");
         //holding image
         JLabel petLabel = new JLabel(petImage);
-        frame.add(petLabel, BorderLayout.WEST);
+        petLabel.setBounds(200,300,500,500);
+        frame.add(petLabel);
         JPanel status = new JPanel();
         frame.add(status);
-        status.setLayout(new GridLayout(4,2));
         nameStatus = new JLabel();
         hungerStatus = new JLabel();
         energyStatus = new JLabel();
@@ -52,13 +52,16 @@ public class PetGUI{
         status.add(happinessStatus);
         happinessStatus.setText("Happiness " + pet.getHappiness());
         status.add(new JLabel("Pet Status "));
+        //ai helped debugged
         JButton feedButton = new JButton("Feed Pet:");
-        feedButton.setPreferredSize(new Dimension(100, 30));
+        feedButton.setPreferredSize(new Dimension(200, 50));
         JButton playButton = new JButton("Play with Pet");
-        playButton.setPreferredSize(new Dimension(100,30));
-        //this adds them to window
-        frame.add(feedButton);
-        frame.add(playButton);
+        playButton.setPreferredSize(new Dimension(200,50));
+        JPanel buttonPanel = new JPanel(new FlowLayout());
+        buttonPanel.add(feedButton);
+        buttonPanel.add(playButton);
+        buttonPanel.setBounds(1400,900,100,50);
+        frame.add(buttonPanel);
         //hmm still kind of confused of this section
         feedButton.addActionListener(new ActionListener(){
             @Override
