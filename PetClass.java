@@ -59,10 +59,20 @@ public class PetClass{
         if (hunger<0){
             hunger = 0;
         }
+        if (energy > 100){
+            energy = 100;
+        }
+        if (hunger > 100){
+            hunger = 100;
+        }
+        if (happiness > 0){
+            happiness = 100;
+        }
     }
     public void passTime(){
         hunger -= 5;
-        energy -= 2;
-        happiness -=5;
+        energy -= 1;
+        happiness -= 5;
+        System.out.println("Happiness now: " + happiness);
     }
 }
