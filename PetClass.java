@@ -65,7 +65,7 @@ public class PetClass{
         if (hunger > 100){
             hunger = 100;
         }
-        if (happiness > 0){
+        if (happiness < 0){
             happiness = 100;
         }
     }

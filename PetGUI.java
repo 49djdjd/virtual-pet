@@ -32,6 +32,7 @@ public class PetGUI{
         //creating new object for testing
         PetClass pet = new PetClass(name1);
         JFrame frame = new JFrame("My Virtual Pet");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(null);
         frame.setSize(1920,1080);
         //creaing image icon
@@ -41,7 +42,7 @@ public class PetGUI{
         JLabel petLabel = new JLabel(petImage);
         JLabel backgroundLabel = new JLabel(background);
         frame.add(petLabel);
-        petLabel.setBounds(200,300,500,500);
+        petLabel.setBounds(200,00,500,500);
         frame.add(backgroundLabel);
         backgroundLabel.setBounds(0, 0, 1920, 1080);
         JPanel status = new JPanel();
@@ -73,7 +74,7 @@ public class PetGUI{
         buttonPanel.add(feedButton);
         buttonPanel.add(playButton);
         buttonPanel.add(restButton);
-        buttonPanel.setBounds(950,50,500,60);
+        buttonPanel.setBounds(950,50,700,60);
         frame.add(buttonPanel);
         //refernced ai for this section -> is a lamba expression
         javax.swing.Timer timer = new javax.swing.Timer(3000, e->{
