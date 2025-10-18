@@ -5,6 +5,7 @@ import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.Timer;
 //groups things togetehr
 import javax.swing.JPanel;
 //main window
@@ -49,14 +50,10 @@ public class PetGUI{
         energyStatus = new JLabel();
         happinessStatus = new JLabel();
         status.add(nameStatus);
-        nameStatus.setText("Name: " + pet.getName());
         status.add(hungerStatus);
-        hungerStatus.setText("Hunger: " + pet.getHunger());
         status.add(energyStatus);
-        energyStatus.setText("Energy: " + pet.getEnergy());
         status.add(happinessStatus);
-        happinessStatus.setText("Happiness " + pet.getHappiness());
-        status.add(new JLabel("Pet Status "));
+        updateStatus(pet);
         //ai helped debugged
         JButton feedButton = new JButton("Feed Pet:");
         feedButton.setPreferredSize(new Dimension(200, 50));
@@ -72,12 +69,27 @@ public class PetGUI{
             @Override
             public void actionPerformed(ActionEvent e){
                 pet.feedPet();
+                pet.makeEverythingIsPositive();
                 
                 System.out.println("Pet is fed!");
             }
             });
+        //refernced ai for this section -> is a lamba expression
+        javax.swing.Timer timer = new javax.swing.Timer(3000, e->{
+            pet.passTime();
+            pet.makeEverythingIsPositive();
+            updateStatus(pet);
+        });
+        timer.start();
         frame.setVisible(true);
         }
+private void updateStatus(PetClass a){
+    nameStatus.setText("Name: " + a.getName());
+    hungerStatus.setText("Hunger: " + a.getHunger());
+    energyStatus.setText("Energy: " + a.getEnergy());
+    happinessStatus.setText("Happiness " + a.getHappiness());
+
+}
 public static void main(String[] args){
     SwingUtilities.invokeLater((new Runnable() {
         @Override

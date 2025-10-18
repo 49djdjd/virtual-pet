@@ -25,7 +25,7 @@ public class PetClass{
         return happiness;
     }
     public void feedPet(){
-        hunger -= 10;
+        hunger += 10;
     }
 
     public void playTime(){
@@ -36,7 +36,7 @@ public class PetClass{
         energy += 25;
     }
     public boolean petAlive(){
-        if (happiness <=0 && hunger == 100){
+        if (happiness <=0 && hunger <=0){
             return false;
         }
         else{
@@ -61,7 +61,7 @@ public class PetClass{
         }
     }
     public void passTime(){
-        hunger += 5;
+        hunger -= 5;
         energy -= 2;
         happiness -=5;
     }
