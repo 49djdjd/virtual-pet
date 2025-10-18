@@ -30,15 +30,20 @@ public class PetGUI{
         PetClass pet = new PetClass(name1);
         JFrame frame = new JFrame("My Virtual Pet");
         frame.setLayout(null);
-        frame.setSize(1500,1000);
+        frame.setSize(1920,1080);
         //creaing image icon
         ImageIcon petImage = new ImageIcon("pet.png");
+        ImageIcon background = new ImageIcon("grass.png");
         //holding image
         JLabel petLabel = new JLabel(petImage);
-        petLabel.setBounds(200,300,500,500);
+        JLabel backgroundLabel = new JLabel(background);
         frame.add(petLabel);
+        petLabel.setBounds(200,300,500,500);
+        frame.add(backgroundLabel);
+        backgroundLabel.setBounds(0, 0, 1920, 1080);
         JPanel status = new JPanel();
         frame.add(status);
+        status.setBounds(50, 50, 500, 50);
         nameStatus = new JLabel();
         hungerStatus = new JLabel();
         energyStatus = new JLabel();
@@ -60,7 +65,7 @@ public class PetGUI{
         JPanel buttonPanel = new JPanel(new FlowLayout());
         buttonPanel.add(feedButton);
         buttonPanel.add(playButton);
-        buttonPanel.setBounds(1400,900,100,50);
+        buttonPanel.setBounds(950,50,500,60);
         frame.add(buttonPanel);
         //hmm still kind of confused of this section
         feedButton.addActionListener(new ActionListener(){
