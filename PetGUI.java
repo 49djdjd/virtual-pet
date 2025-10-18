@@ -42,7 +42,7 @@ public class PetGUI{
         JLabel petLabel = new JLabel(petImage);
         JLabel backgroundLabel = new JLabel(background);
         frame.add(petLabel);
-        petLabel.setBounds(200,00,500,500);
+        petLabel.setBounds(200,400,500,500);
         frame.add(backgroundLabel);
         backgroundLabel.setBounds(0, 0, 1920, 1080);
         JPanel status = new JPanel();
@@ -91,6 +91,7 @@ public class PetGUI{
                 pet.makeEverythingIsPositive();
                 updateStatus(pet);
                 System.out.println("Pet is fed!");
+                new fishMiniGame(frame);
             }
             });
         playButton.addActionListener(new ActionListener(){
