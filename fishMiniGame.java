@@ -48,9 +48,9 @@ public class fishMiniGame extends JPanel{
         //ai used to help with array (so multiple fish can come down together)
         fishArray = new JLabel[numFish];
         for (int i = 0; i < numFish; i++){
+            JLabel fishLabel = new JLabel(fish);
             int maximum = Math.max(1, gamePanel.getWidth() - 200);
             int random = (int)(Math.random()*maximum);
-            JLabel fishLabel = new JLabel(fish);
             fishLabel.setBounds(random,0, 200,200);
             fishArray[i] = fishLabel;
             gamePanel.add(fishLabel);
@@ -58,9 +58,8 @@ public class fishMiniGame extends JPanel{
         }
         //referenced ai to debugg this
         Timer fishTimer = new Timer(20, e-> {
-            for (JLabel f: fishArray){
-                JLabel fish = fishArray[i];
-                fishLabel.setLocation(fishLabel.getX(), fishLabel.getY()+5);
+            for (int i = 0; i < fishArray.length; i++){
+                fishArray[i].setLocation(fishArray[i].getX(), fishArray[i].getY()+5);
             }
         });
         fishTimer.start();
