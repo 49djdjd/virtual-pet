@@ -25,7 +25,7 @@ public class PetClass{
         return happiness;
     }
     public void feedPet(){
-        hunger += 10;
+        hunger += 1;
     }
 
     public void playTime(){

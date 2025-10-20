@@ -64,7 +64,7 @@ public class PetGUI{
         status.add(happinessStatus);
         updateStatus(pet);
         //ai helped debugged
-        JButton feedButton = new JButton("Feed Pet");
+        JButton feedButton = new JButton("Feed Pet"); 
         feedButton.setPreferredSize(new Dimension(200, 50));
         JButton playButton = new JButton("Play with Pet");
         playButton.setPreferredSize(new Dimension(200,50));
@@ -87,13 +87,12 @@ public class PetGUI{
             //this helps catch mistakes
             @Override
             public void actionPerformed(ActionEvent e){
-                pet.feedPet();
                 pet.makeEverythingIsPositive();
                 updateStatus(pet);
                 System.out.println("Pet is fed!");
-                new fishMiniGame(frame);
+                new fishMiniGame(frame, pet);
             }
-            });
+        });
         playButton.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
