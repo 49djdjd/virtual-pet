@@ -24,6 +24,7 @@ import javax.swing.ImageIcon;
 import javax.swing.SwingUtilities;
 
 public class fishMiniGame extends JPanel{
+    private boolean[] fishEaten;
     private PetClass pet;
     private JLabel petLabel;
     private JLabel hungerScreen;
@@ -37,6 +38,7 @@ public class fishMiniGame extends JPanel{
         frame = b;
         hungerScreen = new JLabel();
         hungerScreen.setText("Hunger " + a.getHunger());
+        hungerScreen.setBounds(50,50,200,30);
         //referenced ai to help delete everything for new panel
         b.getContentPane().removeAll();
         b.add(gamePanel);
@@ -57,6 +59,7 @@ public class fishMiniGame extends JPanel{
         petLabel.setBounds(200,500, petWidth, petHeight);
         //ai used to help with array (so multiple fish can come down together)
         fishArray = new JLabel[numFish];
+        fishEaten = new boolean[numFish];
         for (int i = 0; i < numFish; i++){
             int maximum = Math.max(1, gamePanel.getWidth() - 200);
             int random = (int)(Math.random()*maximum);
@@ -73,14 +76,16 @@ public class fishMiniGame extends JPanel{
                 fishArray[i].setLocation(fishArray[i].getX(), fishArray[i].getY()+5);
                 Rectangle petRect = petLabel.getBounds();
                 Rectangle fishRect = fishArray[i].getBounds();
-                if (petRect.intersects(fishRect)){
+                if (petRect.intersects(fishRect) && fishEaten[i] == false){
                     System.out.println("+1 Hunger!");
                     a.feedPet();
                     hungerScreen.setText("Hunger " + a.getHunger());
+                    fishEaten[i] = true;
 
                 }
                 if (fishArray[i].getY() > gamePanel.getHeight()){
                     fishArray[i].setLocation(random, 0);
+                    fishEaten[i] = false;
                 }
             }
         });
