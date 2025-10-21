@@ -22,11 +22,11 @@ import javax.swing.SwingUtilities;
 
 //referenced online sites and AI for this part
 public class PetGUI{
+    private Timer timer;
     private JLabel nameStatus;
     private JLabel hungerStatus;
     private JLabel happinessStatus;
     private JLabel energyStatus;
-    private javax.swing.Timer timer;
     public PetGUI(){
         nameStatus = new JLabel("Name: ");
         String name1 = JOptionPane.showInputDialog("Enter your pet's name: ");
@@ -90,7 +90,6 @@ public class PetGUI{
             public void actionPerformed(ActionEvent e){
                 pet.makeEverythingIsPositive();
                 updateStatus(pet);
-                pause();
                 System.out.println("Pet is fed!");
                 new fishMiniGame(frame, pet);
             }

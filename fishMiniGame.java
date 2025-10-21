@@ -22,7 +22,6 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
 import javax.swing.SwingUtilities;
-
 public class fishMiniGame extends JPanel{
     private boolean[] fishEaten;
     private PetClass pet;
@@ -81,10 +80,12 @@ public class fishMiniGame extends JPanel{
                     a.feedPet();
                     hungerScreen.setText("Hunger: " + a.getHunger());
                     fishEaten[i] = true;
+                    fishArray[i].setVisible(false);
 
                 }
                 if (fishArray[i].getY() > gamePanel.getHeight()){
                     fishArray[i].setLocation(random, 0);
+                    fishArray[i].setVisible(true);
                     fishEaten[i] = false;
                 }
             }
