@@ -24,6 +24,7 @@ import javax.swing.ImageIcon;
 import javax.swing.SwingUtilities;
 public class fishMiniGame extends JPanel{
     private boolean[] fishEaten;
+    private Timer fishTimer;
     private PetClass pet;
     private JLabel petLabel;
     private JLabel hungerScreen;
@@ -68,7 +69,7 @@ public class fishMiniGame extends JPanel{
             gamePanel.add(fishLabel);
     }
         //referenced ai to debug this
-        Timer fishTimer = new Timer(20, e-> {
+        fishTimer = new Timer(20, e-> {
             for (int i = 0; i < fishArray.length; i++){
                 int maximum = Math.max(1, gamePanel.getWidth() - 200);
                 int random = (int)(Math.random()*maximum);
@@ -81,6 +82,15 @@ public class fishMiniGame extends JPanel{
                     hungerScreen.setText("Hunger: " + a.getHunger());
                     fishEaten[i] = true;
                     fishArray[i].setVisible(false);
+                    if (a.getHunger() == 100){
+                        //referenced ai for this
+                        fishTimer.stop();
+                        b.remove(gamePanel);
+                        b.revalidate();
+                        b.repaint();
+
+
+                    }
 
                 }
                 if (fishArray[i].getY() > gamePanel.getHeight()){

@@ -78,7 +78,7 @@ public class PetGUI{
         buttonPanel.setBounds(950,50,700,60);
         frame.add(buttonPanel);
         //refernced ai for this section -> is a lamba expression
-        javax.swing.Timer timer = new javax.swing.Timer(3000, e->{
+        timer = new javax.swing.Timer(3000, e->{
             pet.passTime();
             pet.makeEverythingIsPositive();
             updateStatus(pet);
@@ -88,6 +88,7 @@ public class PetGUI{
             //this helps catch mistakes
             @Override
             public void actionPerformed(ActionEvent e){
+                pause();
                 pet.makeEverythingIsPositive();
                 updateStatus(pet);
                 System.out.println("Pet is fed!");
