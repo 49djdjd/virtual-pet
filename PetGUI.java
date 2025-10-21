@@ -26,6 +26,7 @@ public class PetGUI{
     private JLabel hungerStatus;
     private JLabel happinessStatus;
     private JLabel energyStatus;
+    private javax.swing.Timer timer;
     public PetGUI(){
         nameStatus = new JLabel("Name: ");
         String name1 = JOptionPane.showInputDialog("Enter your pet's name: ");
@@ -89,6 +90,7 @@ public class PetGUI{
             public void actionPerformed(ActionEvent e){
                 pet.makeEverythingIsPositive();
                 updateStatus(pet);
+                pause();
                 System.out.println("Pet is fed!");
                 new fishMiniGame(frame, pet);
             }
@@ -120,6 +122,12 @@ private void updateStatus(PetClass a){
     energyStatus.setText("Energy: " + a.getEnergy());
     happinessStatus.setText("Happiness " + a.getHappiness());
 
+}
+public void pause(){
+    timer.stop();
+}
+public void resume(){
+    timer.start();
 }
 public static void main(String[] args){
     SwingUtilities.invokeLater((new Runnable() {

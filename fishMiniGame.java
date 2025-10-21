@@ -79,7 +79,7 @@ public class fishMiniGame extends JPanel{
                 if (petRect.intersects(fishRect) && fishEaten[i] == false){
                     System.out.println("+1 Hunger!");
                     a.feedPet();
-                    hungerScreen.setText("Hunger " + a.getHunger());
+                    hungerScreen.setText("Hunger: " + a.getHunger());
                     fishEaten[i] = true;
 
                 }
