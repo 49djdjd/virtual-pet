@@ -95,7 +95,7 @@ public class fishMiniGame extends JPanel{
                         b.remove(gamePanel);
                         b.revalidate();
                         b.repaint();
-                        new PetGUI().showHomeScreen(b,a);
+                        new PetGUI(f,p);
 
 
                     }

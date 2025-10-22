@@ -27,18 +27,15 @@ public class PetGUI{
     private JLabel hungerStatus;
     private JLabel happinessStatus;
     private JLabel energyStatus;
-    private PetClass p;
-    private JFrame f;
     public PetGUI(){
-        nameStatus = new JLabel("Name: ");
         String name1 = JOptionPane.showInputDialog("Enter your pet's name: ");
         //creating new object for testing
-        PetClass p = new PetClass(name1);
-        JFrame f = new JFrame("My Virtual Pet");
-        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        f.setLayout(null);
-        f.setSize(1920,1080);
-        showHomeScreen(f, p);
+        PetClass pet = new PetClass(name1);
+        JFrame frame = new JFrame("My Virtual Pet");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLayout(null);
+        frame.setSize(1920,1080);
+        showHomeScreen(frame, pet);
     }
         //creaing image icon
         public void showHomeScreen(JFrame f, PetClass p){
@@ -48,11 +45,13 @@ public class PetGUI{
             ImageIcon background = new ImageIcon("grass.png");
             JLabel backgroundLabel = new JLabel(background);
             f.add(backgroundLabel);
+            f.setComponentZOrder(backgroundLabel, f.getComponentCount()-1);
             backgroundLabel.setBounds(0, 0, 1920, 1080);
             ImageIcon petImage = new ImageIcon("pet.png");
             //holding image
             JLabel petLabel = new JLabel(petImage);
             f.add(petLabel);
+            f.setComponentZOrder(petLabel, 0);
             petLabel.setBounds(200,500,500,500);
             JPanel status = new JPanel();
             status.setLayout(new GridLayout(4,1));
