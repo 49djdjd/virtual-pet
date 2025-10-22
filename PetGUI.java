@@ -103,7 +103,7 @@ public class PetGUI{
                 p.makeEverythingIsPositive();
                 updateStatus(p);
                 System.out.println("Pet is fed!");
-                new fishMiniGame(f, p);
+                new fishMiniGame(f, p) ;
             }
         });
             playButton.addActionListener(new ActionListener(){
