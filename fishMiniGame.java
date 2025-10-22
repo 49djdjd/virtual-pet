@@ -44,6 +44,11 @@ public class fishMiniGame extends JPanel{
         b.add(gamePanel);
         b.revalidate();
         b.repaint();
+        ImageIcon background = new ImageIcon("grass.png");
+        JLabel backgroundLabel = new JLabel(background);
+        backgroundLabel.setBounds(0, 0, 1920, 1080);
+        gamePanel.add(backgroundLabel);
+        gamePanel.setComponentZOrder(backgroundLabel, gamePanel.getComponentCount()-1);
         gamePanel.setBounds(0,0, frame.getWidth(), frame.getHeight());
         gamePanel.add(hungerScreen);
         gamePanel.setFocusable(true);
@@ -51,6 +56,7 @@ public class fishMiniGame extends JPanel{
         petLabel = new JLabel(petImage);
         petLabel.setBounds(200,500,500,500);
         gamePanel.add(petLabel);
+        gamePanel.setComponentZOrder(petLabel, 0);
         ImageIcon fish = new ImageIcon("fish.png");
         int petWidth = petImage.getIconWidth();
         int petHeight = petImage.getIconHeight();
@@ -79,6 +85,7 @@ public class fishMiniGame extends JPanel{
                 if (petRect.intersects(fishRect) && fishEaten[i] == false){
                     System.out.println("+1 Hunger!");
                     a.feedPet();
+                    a.makeEverythingIsPositive();
                     hungerScreen.setText("Hunger: " + a.getHunger());
                     fishEaten[i] = true;
                     fishArray[i].setVisible(false);

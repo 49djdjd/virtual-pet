@@ -35,7 +35,7 @@ public class PetGUI{
         JFrame frame = new JFrame("My Virtual Pet");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(null);
-        frame.setSize(1920,1080);
+        frame.setSize(1920,1080); 
         //creaing image icon
         ImageIcon petImage = new ImageIcon("pet.png");
         ImageIcon background = new ImageIcon("grass.png");
