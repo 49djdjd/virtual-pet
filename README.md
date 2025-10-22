@@ -1,6 +1,7 @@
-My project is called Virtual Pet and its meant to act a virtual pet where the user has to take care of the pet and make sure none of the cateogories drop below zeor.
+My project is called Virtual Pet and its meant to act a virtual pet where the user has to take care of the pet and make sure none of the cateogories drop below zero. 
 Why you made your project I made this project because I am learning java and I wanted to actually code something with it and I thought that this would be something fun to do! Along with that, I got to learn Java Swing/GUI. 
 How you made your project
 I made this project using java and vs code. I started off with the basics (petClass) and then slowly made more and more complex code. I was able to learn about JavaSwing/GUI's and so I had to import a lot of things for it.
 I had so much trouble with this code, for this fairly simple project it took me a while because I was learning while coding and when I had to debug it took me a much longer time than needed. I had such a hard time with the two displays (like the switch from main panel to fish mini game) but once it all worked out I was so happy. I learned a lot (especially in regards to JavaSwing/GUI) but I also learned that it is so so so helpful to think about what you want to implement and the logic behind it before doing anythin (this would have saved me so much time because I had to reformat the entirety of one of my classes because I hadn't planned ahead)
+
 [![Athena Award Badge](https://img.shields.io/endpoint?url=https%3A%2F%2Faward.athena.hackclub.com%2Fapi%2Fbadge)](https://award.athena.hackclub.com?utm_source=readme)
